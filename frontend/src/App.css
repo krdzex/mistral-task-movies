@@ -1,0 +1,114 @@
+.appWrapper {
+  margin: 2% 10%;
+}
+
+.headerWrapper {
+  border-bottom: 1px solid black;
+  background-color: #373b69;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle {
+  color: white;
+  padding: 5px;
+  margin-left: 2em;
+}
+
+.search {
+  margin-right: 2em;
+}
+
+.search input {
+  border-radius: 20px;
+  color: black;
+  outline: none;
+  padding: 10px;
+
+}
+
+
+.movieListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.singleMovie {
+  width: 350px;
+  height: 670px;
+  border: 1px solid #22254b;
+  margin: 15px 0px;
+  border-radius: 10px;
+  background-color: #373b69;
+  box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+  position: relative;
+}
+
+.singleMovie img {
+  width: 100%;
+  height: 367px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.movieTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.movieDescription, .movieCast, .movieRelease, .yourVote {
+  color: white;
+}
+
+.movieCast span, .movieRelease span, .yourVote span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.movieInformations {
+  margin: 0 5px;
+}
+
+.singleMovie:hover {
+  background-color: #585c94;
+  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+  background-color: white;
+  border-radius: 00px 10px 0px 0px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonWrapper button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.starIcon {
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.yourVote p {
+  display: flex;
+  align-items: center;
+}

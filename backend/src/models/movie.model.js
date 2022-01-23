@@ -6,7 +6,8 @@ const MovieSchema = new mongoose.Schema({
     description: { type: String },
     releaseDate: { type: Date },
     cast: [{ type: String }],
-    rating: [{ ratedBy: { type: String }, ratedStar: { type: Number } }]
+    rating: [{ ratedBy: { type: String }, ratedStar: { type: Number } }],
+    type: { type: String }
 })
 
 export default mongoose.model("Movie", MovieSchema)

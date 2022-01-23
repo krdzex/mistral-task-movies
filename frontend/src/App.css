@@ -17,7 +17,10 @@
 }
 
 .search {
+  display: flex;
+  align-items: center;
   margin-right: 2em;
+  flex-wrap: wrap;
 }
 
 .search input {
@@ -111,4 +114,22 @@
 .yourVote p {
   display: flex;
   align-items: center;
+}
+
+.switchWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switchWrapper h3 {
+  margin: 0px 10px;
+  color: white;
+}
+
+.authenticationButton {
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  cursor: pointer;
 }

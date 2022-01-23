@@ -1,7 +1,7 @@
 import { url } from "../config/config"
 
-const getMovieList = (skipMovies, inputValue) => {
-    return fetch(`${url}/movies?skip=${skipMovies}&q=${inputValue}`, {
+const getMovieList = (skipMovies, inputValue, type) => {
+    return fetch(`${url}/movies?skip=${skipMovies}&q=${inputValue}&type=${type}`, {
         method: "GET",
         headers: {
             "Accept": "application/json",

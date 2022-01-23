@@ -2,12 +2,13 @@ import React from 'react';
 import { Icon } from "@iconify/react"
 import { updateRating } from '../apiService/api-movies';
 import { useSelector } from 'react-redux';
+import { useAuth0 } from '@auth0/auth0-react';
 const Movie = (props) => {
-
+    const { isAuthenticated, user } = useAuth0()
     const searchValue = useSelector(state => state.headerInputReducer)
-
+    const switchValue = useSelector(state => state.switchValueReducer)
     const onStarClick = async (rating) => {
-        let updatedMovieList = await updateRating(props.movie._id, { ratedBy: "anonymus", ratedStar: rating, limit: props.limit, q: searchValue })
+        let updatedMovieList = await updateRating(props.movie._id, { ratedBy: isAuthenticated ? user.sub : "anonymus", ratedStar: rating, limit: props.limit, q: searchValue, type: switchValue ? "tvShow" : "movie" })
         props.rateMovie(updatedMovieList)
     }
     return (

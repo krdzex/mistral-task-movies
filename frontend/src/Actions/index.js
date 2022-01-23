@@ -4,3 +4,9 @@ export const changeHeaderInputValue = (newValue) => {
         payload: newValue
     }
 }
+export const changeSwitchValue = (newValue) => {
+    return {
+        type: "CHANGE_SWITCH_VALUE",
+        payload: newValue
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getMovieList } from '../apiService/api-movies';
 
@@ -9,6 +9,7 @@ const MovieList = () => {
     const [movies, setMovies] = useState([])
     const [loadMore, setLoadMore] = useState(true)
     const searchValue = useSelector(state => state.headerInputReducer)
+    const switchValue = useSelector(state => state.switchValueReducer)
     const getMovies = async (refrash) => {
         try {
             let moviesLength = movies.length
@@ -16,7 +17,7 @@ const MovieList = () => {
                 setMovies([])
                 moviesLength = 0
             }
-            let responseMovies = await getMovieList(moviesLength, searchValue.length > 2 ? searchValue : "")
+            let responseMovies = await getMovieList(moviesLength, searchValue.length > 2 ? searchValue : "", switchValue ? "tvShow" : "movie")
             setMovies((prevState) => [...prevState, ...responseMovies.movies])
             setLoadMore(responseMovies.loadMore)
         } catch (error) {
@@ -26,8 +27,8 @@ const MovieList = () => {
 
     useEffect(() => {
         getMovies(true)
-    }, [searchValue])
-
+        // eslint-disable-next-line
+    }, [searchValue, switchValue])
 
 
     const rateMovie = (refreshedMovieList) => {
